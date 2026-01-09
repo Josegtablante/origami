@@ -164,7 +164,8 @@ public class PDFGeneratorServiceImplement implements PDFGeneratorService {
             table.addCell(c5);
             table.addCell(c6);
 
-            total_value.updateAndGet(v -> new Double((double) (v + p.getAmount_perProduct() * p.getProduct_quantity())));
+            total_value.updateAndGet(v -> v + p.getAmount_perProduct() * p.getProduct_quantity());
+
         });
 
         PdfPCell c7 = new PdfPCell(new Phrase("Precio total"));
