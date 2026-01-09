@@ -19,5 +19,4 @@ public interface ClientService {
     Client getClientByEmail(String email);
 
     void saveClient(Client client);
-
 }

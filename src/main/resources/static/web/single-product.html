@@ -36,7 +36,6 @@
 <body>
     <div id="loader">
 
-
         <div class="spinner">
             <div><img class="logoLoader" src="./assets/images/logo_loader.png" alt="loader"></div>
             <div><img class="logoLoader" src="./assets/images/logo_loader.png" alt="loader"></div>
@@ -93,10 +92,8 @@
                             <!-- Header Shop Links Start -->
                             <div class="header-top-right">
 
-                                <p><a href="login-register.html">Registrar</a><a href="login-register.html">Ingresar</a></p>
-                                <!-- <p><button type="button" @click="logOut" class="logOut">Logout<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
-                            </svg></button></p>  -->
+                                <p><a href="login-register.html">Registrar</a><a href="login-register.html">Ingresar</a>
+                                </p>
                                 </p>
 
                             </div><!-- Header Shop Links End -->
@@ -123,13 +120,10 @@
                         <div class="col order-2 order-lg-3">
                             <!-- Header Advance Search Start -->
                             <div class="header-shop-links">
-
-
                                 <div class="header-mini-cart">
                                     <a href="cart.html"><img src="assets/images/icons/cart.png" alt="Cart">
                                         <span>{{storageLength}}</span></a>
                                 </div>
-
                             </div><!-- Header Advance Search End -->
                         </div>
 
@@ -172,9 +166,7 @@
 
                     <div class="col-12">
                         <div class="row row-20 mb-10">
-
                             <div class="col-lg-6 col-12 mb-40">
-
                                 <div class="pro-large-img mb-10">
                                     <a href="">
                                         <img v-bind:src="product.imageURL_front" alt="" />
@@ -186,9 +178,6 @@
                                                 v-bind:src="product.imageURL_front" alt="" /></a></li>
                                     <li><a href="#" data-standard="assets/images/product/product-big-2.jpg"><img
                                                 v-bind:src="product.imageURL_back" alt="" /></a></li>
-                                    <!-- <li><a href="assets/images/product/product-zoom-3.jpg" data-standard="assets/images/product/product-big-3.jpg"><img src="assets/images/product/product-3.jpg" alt="" /></a></li>
-                                <li><a href="assets/images/product/product-zoom-4.jpg" data-standard="assets/images/product/product-big-4.jpg"><img src="assets/images/product/product-4.jpg" alt="" /></a></li>
-                                <li><a href="assets/images/product/product-zoom-5.jpg" data-standard="assets/images/product/product-big-5.jpg"><img src="assets/images/product/product-5.jpg" alt="" /></a></li> -->
                                 </ul>
                             </div>
 
@@ -356,17 +345,6 @@
                         </ul>
                     </div>
 
-                    <!-- <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
-						<h4 class="title">INFORMACIÓN</h4>
-                        <ul>
-                        <li><a href="#">Terminos y condiciones</a></li>
-                        <li><a href="#">Métodos de pago</a></li>
-                        <li><a href="#">Garantías</a></li>
-                        <li><a href="#">Devoluciones</a></li>
-                        <li><a href="#">Seguridad de los pagos</a></li>
-						</ul>
-					</div>	 -->
-
                     <div class="footer-widget col-lg-3 col-md-6 col-12 mb-40">
                         <h5 class="title text-light">SÍGUENOS!</h5>
                         <p class="footer-social text text-light">
@@ -386,7 +364,8 @@
                 <div class="row">
                     <div class="col text-center">
                         <p class="footer-copyright">© 2022 Origami. Hecho con <i class="fa fa-heart heart-icon"></i> By
-                            <a target="_blank" href="https://OrigamiTeam.com">OrigamiTeam</a></p>
+                            <a target="_blank" href="https://OrigamiTeam.com">OrigamiTeam</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -394,10 +373,7 @@
         <!-- Footer Bottom Section End -->
     </div>
 
-    <!-- JS
-
-============================================ -->
-
+    <!-- JS ============================================ -->
     <script src="https://kit.fontawesome.com/8872e142cf.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>

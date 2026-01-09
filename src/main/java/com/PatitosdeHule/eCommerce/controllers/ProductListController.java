@@ -16,13 +16,8 @@ public class ProductListController {
     @Autowired
     ProductListService productListService;
 
-
     @GetMapping("/productlist")
     public Set<ProductListDTO> getArticleDTOSet(){
         return productListService.getProductListDTOs();
-
     }
-
-
-
 }

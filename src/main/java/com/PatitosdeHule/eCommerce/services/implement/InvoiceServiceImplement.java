@@ -35,17 +35,12 @@ public class InvoiceServiceImplement implements InvoiceService {
     @Override
     public InvoiceDTO getInvoiceDTO(Long id) {
         return invoiceRepository.findById(id).map(InvoiceDTO::new).orElse(null);
-
     }
 
     @Override
     public Invoice getLastInvoice() {
-
         List<Invoice> invoiceList = invoiceRepository.findAll();
         invoiceList.stream().sorted(Comparator.comparing(Invoice::getId)).collect(Collectors.toList());
         return invoiceList.get(invoiceList.size() - 1);
-
     }
-
-
 }

@@ -1,13 +1,11 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
-import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.ClothesType;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
 import java.util.List;
 
 public class CreateClothesDTO {
-
     private String name;
     private List<String> colors;
     private String description;
@@ -18,7 +16,6 @@ public class CreateClothesDTO {
     private boolean limitedEdition;
     private ProductType productType;
     private List<String> size;
-//     private ClothesSize clothesSize;
     private int stock;
     private double price;
 
@@ -120,6 +117,4 @@ public class CreateClothesDTO {
     public void setPrice(double price) {
         this.price = price;
     }
-
-
 }

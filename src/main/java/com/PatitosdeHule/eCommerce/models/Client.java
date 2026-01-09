@@ -1,16 +1,12 @@
 package com.PatitosdeHule.eCommerce.models;
 import net.minidev.json.annotate.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 public class Client {
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -29,15 +25,12 @@ public class Client {
     public Client(){}
 
     public Client(String name, String lastName, String email, String password, String cellPhone, boolean isPremium) {
-
-
         this.name = name;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.cellPhone = cellPhone;
         this.isPremium = false;
-
     };
 
     public long getId() {

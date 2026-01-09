@@ -1,13 +1,10 @@
 package com.PatitosdeHule.eCommerce.models;
 
-import com.PatitosdeHule.eCommerce.DTOs.InvoiceDTO;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 
 @Entity
 public class ProductList {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -23,18 +20,14 @@ public class ProductList {
     @JoinColumn(name = "invoice_id")
     private Invoice invoice;
 
-
     public ProductList() {
     }
 
-
     public ProductList(Product product, int product_quantity, double amount_perProduct, Invoice invoice) {
-
         this.product = product;
         this.product_quantity = product_quantity;
         this.amount_perProduct = product.getPrice();
         this.invoice = invoice;
-
     }
 
     public long getId() {
@@ -72,5 +65,4 @@ public class ProductList {
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
-
 }

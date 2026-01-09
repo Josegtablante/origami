@@ -222,13 +222,13 @@
                             <h4 class="checkout-title">Metodo de envío</h4>
                             <div class="checkout-payment-method">
                                 <div class="single-method">
-                                    <input type="radio" id="payment_check" class="shipping-mode" name="shipping-method" value="0"
-                                        v-model="shippingType" required selected >
+                                    <input type="radio" id="payment_check" class="shipping-mode" name="shipping-method"
+                                        value="0" v-model="shippingType" required selected>
                                     <label for="payment_check">Retira en local</label>
                                 </div>
                                 <div class="single-method">
-                                    <input type="radio" id="payment_bank" class="shipping-mode" name="shipping-method" value="1"
-                                        v-model="shippingType" required selected>
+                                    <input type="radio" id="payment_bank" class="shipping-mode" name="shipping-method"
+                                        value="1" v-model="shippingType" required selected>
                                     <label for="payment_bank">Envío a domicilio</label>
                                 </div>
                             </div>
@@ -272,13 +272,16 @@
                                         </div>
                                         <div class="single-method">
                                             <input type="checkbox" id="accept_terms" @click="acceptTyC">
-                                            <label for="accept_terms">Acepta los términos y condiciones para realizar la compra</label>
+                                            <label for="accept_terms">Acepta los términos y condiciones para realizar la
+                                                compra</label>
                                         </div>
                                     </div>
                                 </div>
                                 <button class="place-order" :class="{'bg-secondary': !checkboxChecked}" type="button"
-                                    @click.once="hacerCompra(product)" :disabled="!checkboxChecked && shippingType== '' && paymentMethods == ''">Realizar Pago
-                                    </button>
+                                    @click.once="hacerCompra(product)"
+                                    :disabled="!checkboxChecked && shippingType== '' && paymentMethods == ''">Realizar
+                                    Pago
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -340,7 +343,8 @@
                 <div class="row">
                     <div class="col text-center">
                         <p class="footer-copyright">© 2022 Origami. Hecho con <i class="fa fa-heart heart-icon"></i> By
-                            <a target="_blank" href="https://OrigamiTeam.com">OrigamiTeam</a></p>
+                            <a target="_blank" href="https://OrigamiTeam.com">OrigamiTeam</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -350,8 +354,7 @@
 
     </div>
 
-    <!-- JS
-============================================ -->
+    <!-- JS============================================ -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3"></script>

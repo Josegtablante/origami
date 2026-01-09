@@ -24,9 +24,6 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 
-import com.PatitosdeHule.eCommerce.models.ShippingType;
-import com.PatitosdeHule.eCommerce.models.PaymentMethods;
-
 import javax.servlet.http.HttpServletResponse;
 import java.util.Set;
 
@@ -52,7 +49,6 @@ public class InvoiceController {
 
     @GetMapping("/invoices/last")
     public Invoice getLastInvoiceDTO() {
-
         return invoiceService.getLastInvoice();
     }
 
@@ -67,14 +63,12 @@ public class InvoiceController {
 
     @PostMapping("/invoices/create")
     public ResponseEntity<Object> createInvoice(Authentication authentication, @RequestBody InvoiceAppDTO invoiceAppDTO) {
-
         Client client = clientService.getClientCurrent(authentication);
-
 
         Invoice invoice = new Invoice(client, invoiceAppDTO.getPaymentMethods(), invoiceAppDTO.getShippingType(), getRandomNumber(1, 10000000) + "" , 0, LocalDateTime.now());
         invoiceService.saveInvoices(invoice);
-        return new ResponseEntity<>("Invoice created", HttpStatus.CREATED);
 
+        return new ResponseEntity<>("Invoice created", HttpStatus.CREATED);
     }
 
     @Autowired
@@ -82,7 +76,6 @@ public class InvoiceController {
 
     @GetMapping("/invoices/createPDF")
     public void createPDF(HttpServletResponse response, Authentication authentication) throws IOException, DocumentException {
-
         response.setContentType("application/pdf");
         DateFormat formatDate = new SimpleDateFormat("yyyy-MM-dd:hh::mm");
         String currentDate = formatDate.format(new Date());
@@ -90,10 +83,6 @@ public class InvoiceController {
         String headerKey = "Content-disposition";
         String headerValue = "attachment; filename=Origami_Invoice" + currentDate + ".pdf";
         response.setHeader(headerKey, headerValue);
-
 //        pdfGeneratorService.PDFGenerator(response, authentication);
-
     }
-
 }
-

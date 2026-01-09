@@ -1,6 +1,5 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
-import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.ClothesType;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
@@ -8,7 +7,6 @@ import com.PatitosdeHule.eCommerce.models.ProductType;
 import java.util.List;
 
 public class ClothesDTO {
-
     private long id;
     private String name;
     private List<String> colors;
@@ -20,7 +18,6 @@ public class ClothesDTO {
     private ClothesType clothesType;
     private boolean limitedEdition;
     private ProductType productType;
-//     private ClothesSize clothesSize;
     private int stock;
     private double price;
     private boolean isEnabled;
@@ -28,7 +25,6 @@ public class ClothesDTO {
     public ClothesDTO() {};
 
     public ClothesDTO(Product product) {
-
         this.id = product.getId();
         this.name = product.getName();
         this.colors = product.getColor();
@@ -43,7 +39,6 @@ public class ClothesDTO {
         this.stock = product.getStock();
         this.price = product.getPrice();
         this.isEnabled = product.isEnabled();
-
     }
 
     public long getId() {
@@ -69,18 +64,20 @@ public class ClothesDTO {
     public ProductType getProductType() {return productType;}
 
     public List<String> getSize() {
-            return size;
-        }
+        return size;
+    }
 
     public int getStock() {return stock;}
 
-    public double getPrice() {return price;}
+    public double getPrice() {
+        return price;
+    }
 
     public boolean isEnabled() {
-            return isEnabled;
-        }
+        return isEnabled;
+    }
 
-        public void setEnabled(boolean enabled) {
-            isEnabled = enabled;
-        }
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
 }

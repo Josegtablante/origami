@@ -8,5 +8,6 @@ import java.util.Set;
 public interface ProductListService {
 
     void saveProductList (ProductList productList);
+
     Set<ProductListDTO> getProductListDTOs();
 }

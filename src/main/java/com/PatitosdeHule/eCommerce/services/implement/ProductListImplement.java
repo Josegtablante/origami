@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 @Service
 public class ProductListImplement implements ProductListService {
 
-
     @Autowired
     private ProductListRepository productListRepository;
 
@@ -26,6 +25,4 @@ public class ProductListImplement implements ProductListService {
     public Set<ProductListDTO> getProductListDTOs() {
         return productListRepository.findAll().stream().map(ProductListDTO::new).collect(Collectors.toSet());
     }
-
-
 }

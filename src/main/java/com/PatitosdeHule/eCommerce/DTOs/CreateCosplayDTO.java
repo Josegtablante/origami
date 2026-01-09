@@ -1,13 +1,10 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
-import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
 import java.util.List;
 
 public class CreateCosplayDTO {
-
-
     private String name;
     private String description;
     private String imageURL_front;
@@ -15,7 +12,6 @@ public class CreateCosplayDTO {
     private boolean limitedEdition;
     private ProductType productType;
     private List<String> size;
-  
     private int stock;
     private double price;
 

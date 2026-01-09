@@ -50,9 +50,7 @@ public class ProductController {
 
     @GetMapping("/products/{id}")
     public ProductDTO getProduct(@PathVariable long id) {
-
         return productService.getProductById(id);
-
     }
 
     @PostMapping("/products/cosplay")
@@ -137,7 +135,6 @@ public class ProductController {
 //             return new ResponseEntity<>("Error: missing product size", HttpStatus.FORBIDDEN);
 //         } // Si falta talle del producto.
 
-
         if (createClothesDTO.getSize().isEmpty()) {
             return new ResponseEntity<>("Missing data: Size needed", HttpStatus.FORBIDDEN);
         }
@@ -151,18 +148,14 @@ public class ProductController {
         } // Si el tipo de producto no coincide.
 
         if (productList.stream().map(Product::getName).collect(Collectors.toSet()).contains(createClothesDTO.getName())) {
-
             return new ResponseEntity<>("Error: Product already exist", HttpStatus.FORBIDDEN);
         }
-
 
         Product newClothes = new Product(createClothesDTO.getName(), createClothesDTO.getColors(), createClothesDTO.getDescription(), createClothesDTO.getImageURL_front(), createClothesDTO.getImageURL_back(), createClothesDTO.getAnimeTheme(), createClothesDTO.getClothesType(), createClothesDTO.isLimitedEdition(), createClothesDTO.getProductType(), createClothesDTO.getSize(), createClothesDTO.getStock(), createClothesDTO.getPrice());
         productService.saveProduct(newClothes);
 
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
 
     @Transactional
     @PatchMapping("/products")
@@ -177,13 +170,12 @@ public class ProductController {
 
         ProductList productList = new ProductList(product, productListAppDTO.getQuantity(), product.getPrice(), invoice);
         productListService.saveProductList(productList);
-
         invoice.addArticles(productList);
+
         invoice.setTotal_value(invoice.getTotal_value() + product.getPrice() * productListAppDTO.getQuantity());
         invoiceService.saveInvoices(invoice);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
-
     }
 
     @PatchMapping("/products/status")
@@ -206,16 +198,13 @@ public class ProductController {
 
         if (product.getStock() > 0) {
            return new ResponseEntity<>("Error: product has stock", HttpStatus.FORBIDDEN);
-
         }
 
         product.setEnabled(false);
         productService.saveProduct(product);
 
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
 
     @PatchMapping("/products/stock")
     public ResponseEntity<Object> changeStockProduct(Authentication authentication, @RequestParam long id, @RequestParam int stock) {
@@ -231,19 +220,13 @@ public class ProductController {
             return new ResponseEntity<>("Error: product doesn't exist", HttpStatus.FORBIDDEN);
         }
 
-
         if (stock < 0) {
             return new ResponseEntity<>("Error: stock can't be less than 0", HttpStatus.FORBIDDEN);
-
         }
-
 
         product.setStock(stock);
         productService.saveProduct(product);
 
-
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
-
-
 }

@@ -1,13 +1,11 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
-import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
 
 import java.util.List;
 
 public class CosplayDTO {
-
     private long id;
     private String name;
     private String description;
@@ -16,7 +14,6 @@ public class CosplayDTO {
     private boolean limitedEdition;
     private ProductType productType;
     private List<String> size;
-//     private ClothesSize clothesSize;
     private int stock;
     private double price;
     private boolean isEnabled;
@@ -24,7 +21,6 @@ public class CosplayDTO {
     public CosplayDTO(){};
 
     public CosplayDTO(Product product) {
-
         this.id = product.getId();
         this.name = product.getName();
         this.description = product.getDescription();
@@ -36,7 +32,6 @@ public class CosplayDTO {
         this.stock = product.getStock();
         this.price = product.getPrice();
         this.isEnabled = product.isEnabled();
-
     }
 
     public long getId() {return id;}
@@ -62,10 +57,10 @@ public class CosplayDTO {
     public double getPrice() {return price;}
 
     public boolean isEnabled() {
-            return isEnabled;
-        }
+        return isEnabled;
+    }
 
-        public void setEnabled(boolean enabled) {
-            isEnabled = enabled;
-        }
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
 }

@@ -1,13 +1,11 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
 import com.PatitosdeHule.eCommerce.models.Client;
-import com.PatitosdeHule.eCommerce.models.Invoice;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 public class ClientDTO {
-
     private long id;
     private String name;
     private String lastName;
@@ -29,7 +27,6 @@ public class ClientDTO {
         this.cellPhone = client.getCellPhone();
         this.isPremium = client.isPremium();
         this.invoiceSet = client.getInvoices().stream().map(invoice -> new InvoiceDTO(invoice)).collect(Collectors.toSet());
-
     }
 
     public long getId() {

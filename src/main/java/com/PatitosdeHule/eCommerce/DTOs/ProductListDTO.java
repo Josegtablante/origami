@@ -3,7 +3,6 @@ package com.PatitosdeHule.eCommerce.DTOs;
 import com.PatitosdeHule.eCommerce.models.ProductList;
 
 public class ProductListDTO {
-
     private long id;
     private int product_quantity;
     private double amount_perProduct;
@@ -12,11 +11,9 @@ public class ProductListDTO {
     }
 
     public ProductListDTO(ProductList productList) {
-
         this.id = productList.getId();
         this.product_quantity = productList.getProduct_quantity();
         this.amount_perProduct = productList.getAmount_perProduct();
-
     }
 
     public long getId() {
@@ -38,5 +35,4 @@ public class ProductListDTO {
     public void setAmount_perProduct(double amount_perProduct) {
         this.amount_perProduct = amount_perProduct;
     }
-
 }

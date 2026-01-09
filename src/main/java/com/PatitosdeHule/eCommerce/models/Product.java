@@ -10,19 +10,20 @@ import java.util.Set;
 
 @Entity
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private String name;
     @ElementCollection
     @Column(name = "colors")
     private List<String> colors;
+
     @ElementCollection
     @Column(name = "Size")
     private List<String> size;
+
+    private String name;
     private String description;
     private String imageURL_front;
     private String imageURL_back;
@@ -30,7 +31,7 @@ public class Product {
     private ClothesType clothesType;
     private boolean limitedEdition;
     private ProductType productType;
-    //     private ClothesSize clothesSize;
+    // private ClothesSize clothesSize;
     private int stock;
     private double price;
     private boolean isEnabled;
@@ -41,7 +42,6 @@ public class Product {
     public Product(){}
 
     public Product(String name, List<String> colors, String description, String imageURL_front, String imageURL_back, String animeTheme, ClothesType clothesType, boolean limitedEdition, ProductType productType, List<String> size, int stock, double price) {
-
         this.name = name;
         this.colors = colors;
         this.description = description;
@@ -55,11 +55,9 @@ public class Product {
         this.stock = stock;
         this.price = price;
         this.isEnabled = true;
-
     }
 
     public Product(String name, String description, String imageURL_front, String animeTheme, boolean limitedEdition, ProductType productType, List<String>size, int stock, double price) {
-
         this.name = name;
         this.description = description;
         this.imageURL_front = imageURL_front;
@@ -70,7 +68,6 @@ public class Product {
         this.stock = stock;
         this.price = price;
         this.isEnabled = true;
-
     }
 
     public long getId() {
@@ -183,10 +180,10 @@ public class Product {
     }
 
     public boolean isEnabled() {
-            return isEnabled;
-        }
+        return isEnabled;
+    }
 
-        public void setEnabled(boolean enabled) {
-            isEnabled = enabled;
-        }
+    public void setEnabled(boolean enabled) {
+        isEnabled = enabled;
+    }
 }

@@ -5,14 +5,11 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
 public class Invoice {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -31,27 +28,24 @@ public class Invoice {
     @OneToMany(mappedBy = "invoice", fetch = FetchType.EAGER)
     private Set<ProductList> productLists = new HashSet<>();
 
-
     public Invoice() {
+
     }
 
-    ;
-
     public Invoice(Client client, PaymentMethods paymentMethods, ShippingType shippingType, String invoice_number, double total_value, LocalDateTime date) {
-
         this.client = client;
         this.paymentMethods = paymentMethods;
         this.shippingType = shippingType;
         this.invoice_number = invoice_number;
         this.total_value = total_value;
         this.date = date;
-
     }
 
     @JsonIgnore
     public long getId() {
         return id;
     }
+
     @JsonIgnore
     public Client getClient() {
         return client;
@@ -109,5 +103,4 @@ public class Invoice {
         productList.setInvoice(this);
         productLists.add(productList);
     }
-
 }

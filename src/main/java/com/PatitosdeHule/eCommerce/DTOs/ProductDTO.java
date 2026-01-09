@@ -1,19 +1,15 @@
 package com.PatitosdeHule.eCommerce.DTOs;
 
-import com.PatitosdeHule.eCommerce.models.ClothesSize;
 import com.PatitosdeHule.eCommerce.models.ClothesType;
 import com.PatitosdeHule.eCommerce.models.Product;
 import com.PatitosdeHule.eCommerce.models.ProductType;
-
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-
 public class ProductDTO {
-
     private long id;
     private String name;
     private List<String> colors;
@@ -25,7 +21,6 @@ public class ProductDTO {
     private ClothesType clothesType;
     private boolean limitedEdition;
     private ProductType productType;
-    //     private ClothesSize clothesSize;
     private int stock;
     private double price;
     private boolean isEnabled;
@@ -153,11 +148,9 @@ public class ProductDTO {
         this.price = price;
     }
 
-
     public Set<ProductListDTO> getArticleDTOSet() {
         return productListDTOSet;
     }
-
 
     public boolean isEnabled() {
         return isEnabled;

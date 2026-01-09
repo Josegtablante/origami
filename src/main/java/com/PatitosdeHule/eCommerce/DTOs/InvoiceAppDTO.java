@@ -7,17 +7,12 @@ public class InvoiceAppDTO {
     private PaymentMethods paymentMethods;
     private ShippingType shippingType;
 
-
     public InvoiceAppDTO() {
     }
 
-    ;
-
     public InvoiceAppDTO(PaymentMethods paymentMethods, ShippingType shippingType) {
-
         this.paymentMethods = paymentMethods;
         this.shippingType = shippingType;
-
     }
 
     public PaymentMethods getPaymentMethods() {

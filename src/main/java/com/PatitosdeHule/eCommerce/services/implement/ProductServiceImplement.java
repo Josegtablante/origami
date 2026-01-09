@@ -21,16 +21,13 @@ public class ProductServiceImplement implements ProductService {
     private ProductRepository productRepository;
 
     @Override
-        public Set<Product> getProducts() {
-            return productRepository.findAll().stream().filter(Product::isEnabled).collect(Collectors.toSet());
-        }
-
-
+    public Set<Product> getProducts() {
+        return productRepository.findAll().stream().filter(Product::isEnabled).collect(Collectors.toSet());
+    }
 
     @Override
     public Set<ProductDTO> getProductsDTO() {
         return productRepository.findAll().stream().filter(Product::isEnabled).map(ProductDTO::new).collect(Collectors.toSet());
-
     }
 
     @Override
@@ -48,11 +45,8 @@ public class ProductServiceImplement implements ProductService {
         return productRepository.findAll().stream().filter(product -> product.getProductType() == ProductType.COSPLAY && product.isEnabled()).map(CosplayDTO::new).collect(Collectors.toSet());
     }
 
-
-
     @Override
     public ProductDTO getProductById(long id) {
-
         return new ProductDTO(productRepository.findById(id).orElse(null));
     }
 
@@ -60,8 +54,4 @@ public class ProductServiceImplement implements ProductService {
     public Product getProduct(Long id) {
         return productRepository.findById(id).orElse(null);
     }
-
-
-
-
 }

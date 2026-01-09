@@ -10,7 +10,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 public class InvoiceDTO {
-
     private long id;
     private PaymentMethods paymentMethods;
     private ShippingType shippingType;
@@ -23,7 +22,6 @@ public class InvoiceDTO {
     }
 
     public InvoiceDTO(Invoice invoice) {
-
         this.id = invoice.getId();
         this.paymentMethods = invoice.getPaymentMethods();
         this.invoice_number = invoice.getInvoice_number();
@@ -31,7 +29,6 @@ public class InvoiceDTO {
         this.date = invoice.getDate();
         this.articlesDTO = invoice.getArticles().stream().map(ProductListDTO::new).collect(Collectors.toSet());
         this.shippingType = invoice.getShippingType();
-
     }
 
     public long getId() {

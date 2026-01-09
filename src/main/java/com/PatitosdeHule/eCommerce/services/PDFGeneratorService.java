@@ -6,6 +6,5 @@ import org.springframework.security.core.Authentication;
 import java.io.IOException;
 
 public interface PDFGeneratorService {
-
     void PDFGenerator(HttpServletResponse response, Authentication authentication) throws IOException, DocumentException;
 }

@@ -1,48 +1,47 @@
-.background{
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5999;
+.background {
+   background-color: rgb(255, 255, 255);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 5999;
 }
 
-.backgroundLoader{
-    background-color: #e0bbe476;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 9999;
+.backgroundLoader {
+   background-color: #e0bbe476;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 9999;
 }
-.logoLoader{
-    width: 100%;
 
-    
-    
+.logoLoader {
+   width: 100%;
 }
+
 .spinner {
-    /* width: 44.8px; */
+   /* width: 44.8px; */
    width: 177.6px;
    height: 177.6px;
    animation: spinner-y0fdc1 2s infinite ease;
    transform-style: preserve-3d;
    position: absolute;
-    margin: auto;
-    left: 43%;
-    top: 43%;
-    z-index: 50000;
+   margin: auto;
+   left: 43%;
+   top: 43%;
+   z-index: 50000;
 }
 
-.spinner > div {
+.spinner>div {
    background-color: #0000002a;
    height: 100%;
    position: absolute;
@@ -92,10 +91,8 @@
    }
 }
 
-.logOut{
-
-background: rgb(159, 127, 177) !important;
-border: none !important;
-font-weight: 500;
-
+.logOut {
+   background: rgb(159, 127, 177) !important;
+   border: none !important;
+   font-weight: 500;
 }
