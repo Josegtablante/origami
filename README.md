@@ -71,23 +71,40 @@ http://localhost:8080/web/index.html
 
 ## 🛍️ Productos
 
-| Método | Ruta                 | Descripción                |
-| ------ | -------------------- | -------------------------- |
-| GET    | `/api/products`      | Obtener lista de productos |
-| GET    | `/api/products/{id}` | Obtener producto por ID    |
-| POST   | `/api/products`      | Crear nuevo producto       |
-| PUT    | `/api/products/{id}` | Actualizar producto        |
-| DELETE | `/api/products/{id}` | Eliminar producto          |
+| Método | Ruta                    | Descripción                         |
+| ------ | ----------------------- | ----------------------------------- |
+| GET    | `/api/products`         | Obtiene lista de productos          |
+| GET    | `/api/products/clothes` | Obtiene productos de tipo ropa.     |
+| GET    | `/api/products/cosplay` | Obtiene productos de tipo cosplay   |
+| GET    | `/api/products/{id}`    | Obtiene producto por ID             |
+| POST   | `/api/products/clothes` | Crear nuevo producto (solo admin)   |
+| POST   | `/api/products/cosplay` | Crear nuevo cosplay (solo admin)    |
+| PATH   | `/api/products     `    | Actualizar lista de productos       |
+| PATH   | `/api/products/status`  | Deshabilitar el producto            |
+| PATH   | `/api/products/stock`   | Actualizar el stock de un producto  |
 
 
-## 👤 Usuarios
+## 👤 Clientes
 
-| Método | Ruta                  | Descripción                       |
-| ------ | --------------------- | --------------------------------- |
-| POST   | `/api/users/register` | Registrar nuevo usuario           |
-| POST   | `/api/users/login`    | Login de usuarios (autenticación) |
-| GET    | `/api/users/{id}`     | Obtener perfil por ID             |
+| Método | Ruta                        | Descripción                                         |
+| ------ | --------------------------- | --------------------------------------------------- |
+| GET    | `/api/clients`              | Optiene todos los clientes                          |
+| GET    | `/api/clients/{id}`         | Optiene un clientes por su id                       |
+| POST   | `/api/clients`              | Registrar nuevo cliente                             |
+| GET    | `/api/clients/current`      | Optiene a los clientes autenticados                 |
+| PATH   | `/api/clients/subscription` | Cambia el estado del cliente autenticado a premium. |
+| GET    | `/api/users/{id}`           | Revierte el estado premium del cliente autenticado. |
 
+🧠 Reglas de negocio clave
+
+Contraseñas se almacenan encriptadas (PasswordEncoder)
+
+- El email del cliente es único
+
+- Administradores (@orgm.com) no pueden cambiar su tipo de cuenta
+
+- Se utiliza ClientDTO para exponer datos (no la entidad directa)
+  
 
 ## 🧺 Carrito y compras
 
@@ -101,20 +118,20 @@ http://localhost:8080/web/index.html
 ## 🧩 Dependencias comunes (Spring Boot)
 
 Estas dependencias suelen estar definidas en build.gradle para un proyecto como este.
-
+```
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2'
-    implementation 'org.springframework.boot:spring-boot-starter-security' // si tiene auth
+    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
-
+```
 ## 📦 Dependencias Frontend (Vue)
 
 En package.json podría incluirse:
-
+```
 {
   "dependencies": {
     "vue": "^3.x",
@@ -125,4 +142,4 @@ En package.json podría incluirse:
     "@vue/cli-service": "~5.x"
   }
 }
-
+```
